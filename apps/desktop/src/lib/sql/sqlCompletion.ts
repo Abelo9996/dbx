@@ -3049,7 +3049,7 @@ export function getSqlCompletionContext(sql: string, cursor: number, options: Sq
     followingKeyword: getFollowingKeywordAfterCursor(sql, cursor, statementSpan.end),
     contextKind,
     dataTypeContext,
-    afterTableReference: !qualifier && !exclusiveTableSuggestions && !suggestColumns && !insertInfo && isAfterSelectBodyExpression(beforeToken, options.databaseType),
+    afterTableReference: !dataTypeContext && !qualifier && !exclusiveTableSuggestions && !suggestColumns && !insertInfo && isAfterSelectBodyExpression(beforeToken, options.databaseType),
   };
 }
 
